@@ -24,6 +24,11 @@ jobs:
 
       - run: npm ci
 
+      - run: npm run build
+        env:
+          TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          TURBO_TEAM: wedersonf
+
       - name: Publish to NPM
         id: changesets
         uses: changesets/action@v1
